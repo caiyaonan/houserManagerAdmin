@@ -8,6 +8,9 @@
       <el-button class="filter-item" type="primary" icon="el-icon-search" style="margin-left: 10px;" @click="handleFilter">
         搜索
       </el-button>
+      <el-button class="filter-item" type="primary" icon="el-icon-search" style="margin-left: 10px;" @click="handleFilter">
+        添加管理员
+      </el-button>
     </div>
     <el-table
       v-loading="listLoading"
@@ -101,12 +104,12 @@ export default {
       this.fetchData()
     },
     fetchData() {
-      this.listLoading = true
-      getList(this.listQuery).then(response => {
-        this.list = response.data.items
-        this.total = response.data.total
+      // this.listLoading = true
+      // getList(this.listQuery).then(response => {
+        // this.list = response.data.items
+        // this.total = response.data.total
         this.listLoading = false
-      })
+      // })
     },
     handleModifyStatus(row) {
       var params = {
